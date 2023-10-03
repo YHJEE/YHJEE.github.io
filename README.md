@@ -1,1 +1,1 @@
-# POWERBALL.github.io
+# powerball.github.io
