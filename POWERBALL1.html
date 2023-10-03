@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWER BALL CREATE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>POWER BALL CREATE</h1>
+    <p>Create a random Powerball number:</p>
+    <button onclick="generatePowerballNumbers()">CREATE</button>
+    <p id="powerballNumbers"></p>
+
+    <script>
+        function generatePowerballNumbers() {
+            // 1에서 69 사이의 5개의 무작위 번호 생성
+            var whiteNumbers = [];
+            while (whiteNumbers.length < 5) {
+                var number = Math.floor(Math.random() * 69) + 1;
+                if (whiteNumbers.indexOf(number) === -1) {
+                    whiteNumbers.push(number);
+                }
+            }
+
+            // 1에서 26 사이의 무작위 번호 생성
+            var powerballNumber = Math.floor(Math.random() * 26) + 1;
+
+            // 결과를 표시
+            var powerballNumbersElement = document.getElementById("powerballNumbers");
+            powerballNumbersElement.textContent = "Powerball Number: " + whiteNumbers.join(", ") + " + Powerball Number: " + powerballNumber;
+        }
+    </script>
+</body>
+</html>
